@@ -32,13 +32,15 @@
 
 首页在头部使用一个自动播放且静音的视频吸引用户的眼球，然后在下边使用瀑布流，让用户继续浏览，在瀑布流中使用鼠标悬浮动画，使网页更加灵动，也能展现更多内容。
 
-![](media/image1.png){width="2.323611111111111in" height="3.26875in"}
+![](media/image1.png)
+
 HTML结构图：
 
 页面测试结果：
 
-![](media/image2.jpeg){width="4.1875in" height="6.774305555555555in"}
-（Edge版本 91.0.864.41下测试）
+![](media/image2.jpeg)
+
+（Edge版本 91.0.864.41下测试)
 
 ### （2）运动介绍页
 
@@ -48,13 +50,15 @@ HTML结构图：
 
 在运动介绍页中，我们将内容分为了三个模块，分别概述三种极限运动的介绍和来源，一个模块分为视频部分和一个悬浮的小卡片，为了使视频上和卡片上的文本能够更加清晰，我们还在两个部分上面加了一个灰蓝色的滤镜"滤镜"，当用户将光标移动到某个模块的时候，整个模块的内容就会以动画的方式呈现出来，灵动，生趣。整个颜色主色调使用灰蓝色，我们希望用户在了解极限运动的时候能够沉浸进去，去感受到极限运动的魅力。
 
-![](media/image3.png){width="3.379861111111111in"
-height="4.754166666666666in"} HTML结构图：
+![](media/image3.png)
+
+HTML结构图：
 
 页面测试结果：
 
-![](media/image4.jpeg){width="3.8027777777777776in"
-height="6.008333333333334in"}（Edge版本 91.0.864.41下测试）
+![](media/image4.jpeg)
+
+（Edge版本 91.0.864.41下测试）
 
 ### （3）运动员页
 
@@ -72,13 +76,11 @@ height="6.008333333333334in"}（Edge版本 91.0.864.41下测试）
 
 HTML结构图：
 
-![](media/image5.png){width="5.768055555555556in"
-height="4.779861111111111in"}
+![](media/image5.png)
 
 页面测试结果：
 
-![](media/image6.png){width="5.768055555555556in"
-height="7.263194444444444in"}
+![](media/image6.png)
 
 谷爱凌个人页
 
@@ -86,13 +88,11 @@ height="7.263194444444444in"}
 
 HTML：
 
-![](media/image7.png){width="5.768055555555556in"
-height="5.653472222222222in"}
+![](media/image7.png)
 
 页面测试结果：
 
-![](media/image6.png){width="5.768055555555556in"
-height="7.263194444444444in"}
+![](media/image6.png)
 
 ### （4）活动介绍页
 
@@ -104,25 +104,23 @@ height="7.263194444444444in"}
 
 HTML：
 
-![](media/image8.png){width="5.760416666666667in"
-height="3.2395833333333335in"}
+![](media/image8.png)
 
 页面测试结果：
 
-![](media/image9.jpeg){width="3.9715277777777778in"
-height="3.8986111111111112in"}
+![](media/image9.jpeg)
 
 登陆页面：
 
 负责人：梁友欢19
 
-![](media/image10.png){width="5.760416666666667in"
-height="3.2395833333333335in"}HTML：
+![](media/image10.png)
+
+HTML：
 
 页面测试结果：
 
-![](media/image11.jpeg){width="5.767361111111111in"
-height="2.9368055555555554in"}
+![](media/image11.jpeg)
 
 ### （5）商品介绍页
 
@@ -142,12 +140,13 @@ height="2.9368055555555554in"}
 
  运用一些简单的css动画向顾客进行传输
 
-![](media/image12.png){width="2.736111111111111in"
-height="2.357638888888889in"}HTML：
+![](media/image12.png)
+
+HTML：
 
 页面测试结果：
 
-![](media/image13.jpeg){width="1.9625in" height="3.5145833333333334in"}
+![](media/image13.jpeg)
 
 ### （6）商品具体页
 
@@ -155,11 +154,10 @@ height="2.357638888888889in"}HTML：
 
 HTML：
 
-![](media/image14.png){width="2.736111111111111in"
-height="2.2888888888888888in"}
+![](media/image14.png)
 
 页面测试结果：
 
-![](media/image15.jpeg){width="2.3875in" height="6.126388888888889in"}
+![](media/image15.jpeg)
 
 心得：此次学习让我们了解了相关技术，也对前端有了充分的认识
