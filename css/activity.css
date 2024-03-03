@@ -1,0 +1,861 @@
+@charset "utf-8";
+/* CSS Document */
+
+ul {
+	list-style-type: none;
+}
+
+/* ---------------------------------- */
+/* 头部布局 */
+header {
+	height  : 100%;
+	/* 设置相对定位 */
+	position: relative;
+}
+
+/* 菜单 */
+/* 头部的蓝条 */
+.menu-background-top {
+	display            : block;
+	height             : 60px;
+	width              : 100%;
+	background-color   : rgb(0, 22, 43);
+	/* position        : absolute; */
+	top                : 0;
+	z-index            : -1;
+}
+
+/* 菜单布局 */
+.menu {
+	/* 临时的 */
+	/* overflow              : hidden; */
+	z-index        : 2;
+	display        : flex;
+	backdrop-filter: blur(3px);
+	position       : fixed;
+	height         : 60px;
+	width          : 100%;
+	margin         : 0 auto;
+	top            : 0;
+	left           : 0;
+	right          : 0;
+	margin         : auto;
+	justify-content: center;
+}
+
+/* menu中的超链接布局 */
+.menu a {
+	opacity            : 1;
+	/* background-color: #bfa; */
+	transition         : .3s .2s;
+	border-radius      : 20px 20px 20px 20px;
+	top                : 0;
+	position           : relative;
+	line-height        : 60px;
+	/* 改为块元素 */
+	display            : block;
+	/* 设置行高 */
+	text-decoration    : none;
+	/* 设置颜色 */
+	color              : #ffffff;
+	/* 设置字体大小 */
+	font-size          : 18px;
+	/* 设置内边距 */
+	padding            : 0 95px;
+	/* 设置阴影 */
+	box-shadow         : 0px 0px 50px rgba(0, 0, 0, .0);
+}
+
+/* 轮流呈现 */
+.menu .menu-title-home a {
+	animation: menu-begin 1s .2s backwards;
+}
+
+.menu .menu-sport a {
+	animation: menu-begin 1s .4s backwards;
+}
+
+.menu .menu-sportsman a {
+	animation: menu-begin 1s .6s backwards;
+}
+
+.menu .menu-activities a {
+	animation: menu-begin 1s .8s backwards;
+}
+
+.menu .menu-commodities a {
+	animation: menu-begin 1s 1s backwards;
+}
+
+
+@keyframes menu-begin {
+	0% {
+		top             : 100px;
+		opacity         : 0;
+		background-color: rgb(26, 46, 65);
+		backdrop-filter : blur(5px);
+	}
+
+	100% {
+		top    : 0;
+		opacity: 1;
+	}
+}
+
+.menu ul:hover a {
+	top             : 10px;
+	/* 设置hover的背景变色 */
+	background-color: rgb(26, 46, 65);
+	/* 设置hover生效延迟 */
+	transition      : 0.5s ease;
+	/* 设置hover阴影 */
+	box-shadow      : 0px 0px 50px rgba(0, 0, 0, .5);
+	/* 毛玻璃效果 */
+	backdrop-filter : blur(5px);
+}
+
+/* 运动介绍 ok */
+.menu-list-sport .menu-sport+div {
+	transition         : .2s;
+	overflow           : hidden;
+	/* display         : none; */
+	width              : 262px;
+	height             : 0px;
+	background-color   : rgb(26, 46, 65);
+	/* 设置绝对定位，使其不占据页面的位置 */
+	position           : absolute;
+	top                : 50px;
+	z-index            : 999;
+	box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+	border-radius      : 0 0 20px 20px
+}
+
+.menu-list-sport:hover .menu-sport+div {
+	transition: .3s .3s;
+	display   : block;
+	height    : 436px;
+}
+
+
+/* 运动员OK */
+.menu-list-sportsman .menu-sportsman+div {
+	transition         : .2s;
+	overflow           : hidden;
+	/* display         : none; */
+	width              : 244px;
+	height             : 0px;
+	background-color   : rgb(26, 46, 65);
+	/* 设置绝对定位，使其不占据页面的位置 */
+	position           : absolute;
+	top                : 50px;
+	z-index            : 999;
+	box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+	border-radius      : 0 0 20px 20px
+}
+
+.menu-list-sportsman:hover .menu-sportsman+div {
+	transition: .3s .3s;
+	display   : block;
+	height    : 436px;
+}
+
+
+/* 活动介绍 */
+.menu-list-activities .menu-activities+div {
+	transition         : .2s;
+	overflow           : hidden;
+	/* display         : none; */
+	width              : 262px;
+	height             : 0px;
+	background-color   : rgb(26, 46, 65);
+	/* 设置绝对定位，使其不占据页面的位置 */
+	position           : absolute;
+	top                : 50px;
+	z-index            : 999;
+	box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+	border-radius      : 0 0 20px 20px
+}
+
+.menu-list-activities:hover .menu-activities+div {
+	transition: .3s .3s;
+	display   : block;
+	height    : 436px;
+}
+
+
+/* 商品ok */
+.menu-list-commodities .menu-commodities+div {
+	transition         : .2s;
+	overflow           : hidden;
+	/* display         : none; */
+	width              : 226px;
+	height             : 0px;
+	background-color   : rgb(26, 46, 65);
+	/* 设置绝对定位，使其不占据页面的位置 */
+	position           : absolute;
+	top                : 50px;
+	z-index            : 999;
+	box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+	border-radius      : 0 0 20px 20px
+}
+
+.menu-list-commodities:hover .menu-commodities+div {
+	transition: .3s .3s;
+	display   : block;
+	height    : 436px;
+}
+
+.background-top {
+	height          : 60px;
+	width           : 100%;
+	background-color: chocolate;
+}
+
+
+.menu-background-bottom {
+	/* 设置为块元素 */
+	display         : block;
+	width           : 100%;
+	height          : 60px;
+	background-color: rgb(0, 22, 43);
+	/* 设置为粘滞定位 */
+	position        : sticky;
+	/* 贴顶 */
+	top             : 0;
+	/* top          : 900px; */
+	/* z-index      : 1; */
+	z-index         : 1;
+}
+
+/* ------------------------------ */
+
+body {
+	display         : flex;
+	flex-direction  : column;
+	justify-content : center;
+	align-items     : center;
+	background-color: rgb(98, 110, 120);
+	margin          : 0;
+}
+
+.tou {
+	position       : relative;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	width          : 100%;
+	height         : 490px;
+	top            : 0%;
+	background     : #061725;
+}
+
+.a {
+	width  : 100%;
+	height : 100%;
+	opacity: 0.3;
+}
+
+.bq {
+	/*	z-index: 1;*/
+	width          : 100%;
+	top            : 35%;
+	position       : absolute;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	font           : 80px '微软雅黑';
+	letter-spacing : 50px;
+	color          : white;
+	transition     : 1s;
+}
+
+.bq_2 {
+	/*	z-index: 3;*/
+	width          : 100%;
+	top            : 30%;
+	position       : absolute;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	font           : 80px '微软雅黑';
+	letter-spacing : 50px;
+	color          : white;
+	opacity        : 0;
+}
+
+
+.tou:hover .bq {
+	top           : -150px;
+	letter-spacing: 150px;
+	transition    : .5s;
+}
+
+.tou:hover .bq_2 {
+	opacity   : 1;
+	transition: 1.5s .2s;
+}
+
+
+/*第二块*/
+
+
+
+.dr {
+	position       : relative;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	width          : 100%;
+	height         : 700px;
+	/*	top         :330px;*/
+
+}
+
+
+.img_a {
+	cursor          : pointer;
+	overflow        : hidden;
+	left            : 43%;
+	border-radius   : 15px;
+	width           : 300px;
+	height          : 400px;
+	position        : relative;
+	display         : flex;
+	justify-content : center;
+	align-items     : center;
+	top             : -35%;
+	box-shadow      : 0px 0px 25px rgba(0, 0, 0, .8);
+	background-color: #E0E0E0;
+}
+
+.img_b {
+	cursor          : pointer;
+	overflow        : hidden;
+	border-radius   : 15px;
+	width           : 300px;
+	height          : 400px;
+	position        : relative;
+	display         : flex;
+	justify-content : center;
+	align-items     : center;
+	top             : -35%;
+	box-shadow      : 0px 0px 25px rgba(0, 0, 0, .8);
+	background-color: #E0E0E0;
+}
+
+.img_c {
+	cursor          : pointer;
+	overflow        : hidden;
+	left            : -43%;
+	border-radius   : 15px;
+	width           : 300px;
+	height          : 400px;
+	position        : relative;
+	display         : flex;
+	justify-content : center;
+	align-items     : center;
+	top             : -35%;
+	box-shadow      : 0px 0px 25px rgba(0, 0, 0, .8);
+	background-color: #E0E0E0;
+}
+
+.dr_img {
+	top                 : 0;
+	position            : relative;
+	/*	-webkit-clip-path: polygon(0 0, 100% 0, 100% 74%, 0 74%);*/
+	clip-path           : polygon(0 0, 100% 0, 100% 75%, 0 75%);
+	transition          : 1.2s;
+	/*	overflow         : hidden;*/
+	opacity             : 1;
+
+}
+
+.dr_bq {
+	position       : absolute;
+	justify-content: center;
+	align-items    : center;
+	top            : 72%;
+	left           : 3%;
+	font           : 900 23px '微软雅黑';
+
+}
+
+.dr_bq2 {
+	position       : absolute;
+	justify-content: center;
+	align-items    : center;
+	top            : 82.5%;
+	width          : 90%;
+	left           : 5%;
+	font           : 400 15px '微软雅黑';
+	color          : gray;
+}
+
+.dr_jt {
+	position       : absolute;
+	justify-content: center;
+	align-items    : center;
+	top            : 80%;
+	width          : 90%;
+	left           : 80%;
+	font           : 700 40px '微软雅黑';
+	clip-path      : polygon(0 0, 0 0, 0 100%, 0 100%);
+	text-shadow    : 0px 4px 8px grey;
+	transition     : 1s;
+}
+
+.dr_text {
+	letter-spacing : 5px;
+	left           : 5px;
+	text-align     : center;
+	position       : absolute;
+	top            : 25%;
+	text-decoration: none;
+	font           : 900 20px '微软雅黑';
+	color          : #000000;
+	display        : block;
+	width          : 100%;
+
+}
+
+.dr_b {
+	font    : 900 30px '';
+	position: absolute;
+	top     : -60%;
+	left    : 45%;
+	opacity : 0;
+}
+
+.dr_c {
+	/*	overflow: hidden;*/
+	font           : 900 20px '微软雅黑';
+	position       : absolute;
+	top            : 25%;
+	left           : 45%;
+	opacity        : 0;
+	display        : block;
+	width          : 100%;
+	text-decoration: none;
+	color          : #000000;
+}
+
+.an {
+	position        : absolute;
+	z-index         : 1;
+	display         : flex;
+	justify-content : center;
+	align-items     : center;
+	height          : 45px;
+	width           : 200px;
+	top             : 90%;
+	border-radius   : 25px;
+	background-color: white;
+	box-shadow      : 2px 4px 12px black;
+
+}
+
+.an_bq {
+	left    : -10px;
+	top     : 50%;
+	width   : 100%;
+	position: absolute;
+	height  : 120px;
+}
+
+.an_bq1 {
+	letter-spacing: 20px;
+	text-align    : center;
+	font          : 900 40px '微软雅黑';
+	height        : 100px;
+}
+
+.an_bq2 {
+	top       : 100%;
+	left      : 10px;
+	text-align: center;
+	width     : 100%;
+	font      : 900 40px '微软雅黑';
+	position  : absolute;
+	transition: 1s;
+}
+
+
+
+.img_a:hover .dr_img {
+	transform : scale(1.04, 1.04);
+	transition: .5s;
+}
+
+.img_b:hover .dr_img {
+	transform : scale(1.04, 1.04);
+	transition: .5s;
+}
+
+.img_c:hover .dr_img {
+	transform : scale(1.04, 1.04);
+	transition: .5s;
+}
+
+.dr:hover .an_bq2 {
+	top       : 130%;
+	transition: 1.2s;
+}
+
+.img_a:hover .dr_jt {
+	clip-path : polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	left      : 85%;
+	transition: 2s;
+}
+
+.img_b:hover .dr_jt {
+	clip-path : polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	left      : 85%;
+	transition: 2s;
+}
+
+.img_c:hover .dr_jt {
+	clip-path : polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	left      : 85%;
+	transition: 2s;
+}
+
+/*					状态栏*/
+
+
+.sskj {
+	position        : relative;
+	display         : flex;
+	align-items     : center;
+	width           : 100%;
+	background-color: #F5F5F5;
+	height          : 55px;
+	box-shadow      : 2px 4px 12px rgba(0, 0, 0, .3);
+}
+
+.ssk {
+	position     : absolute;
+	top          : 50%;
+	left         : 86.5%;
+	transform    : translate(-50%, -50%);
+	height       : 40px;
+	border-radius: 40px;
+	box-shadow   : 1px 1px 5px grey;
+
+}
+
+.srk {
+	border     : none;
+	background : none;
+	/*     取消选中搜索框时的外边框 */
+	outline    : none;
+	width      : 0;
+	padding    : 0;
+	transition : .4s;
+	line-height: 40px;
+	font-size  : 20px;
+	color      : wheat;
+	left       : 10px;
+}
+
+.ss_img {
+	left           : 50%;
+	/*	color       : black;*/
+	float          : right;
+	width          : 40px;
+	height         : 40px;
+	border-radius  : 50%;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	transition     : .5s;
+}
+
+.ssk:hover .srk {
+	width  : 150px;
+	padding: 0 6px;
+}
+
+.ssk:hover .ss_img {
+	background-color: wheat;
+}
+
+.yh {
+	position     : absolute;
+	top          : 50%;
+	left         : 50%;
+	transform    : translate(-50%, -50%);
+	height       : 40px;
+	border-radius: 40px;
+	padding      : 6px;
+}
+
+.yhzx {
+	text-align          : center;
+	justify-content     : center;
+	align-items         : center;
+	font                : 900 25px '微软雅黑';
+	display             : flex;
+	position            : absolute;
+	color               : #373737;
+	width               : 100px;
+	top                 : 20%;
+	left                : -100px;
+	/*	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);*/
+	clip-path           : polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	text-decoration     : none;
+}
+
+.yh:hover .yhzx {
+	/*	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);*/
+	clip-path : polygon(100% 0, 0 0, 0 100%, 100% 100%);
+	transition: 1.5s;
+}
+
+.yh:hover {
+	left      : 53.5%;
+	transition: 1.5s;
+}
+
+.time {
+	position: absolute;
+	height  : 30px;
+	left    : 50px;
+	top     : -5%;
+	width   : 300px;
+}
+
+.time_p {
+	font : 500 25px '微软雅黑';
+	color: black;
+	top  : -300px;
+}
+
+/*第四层*/
+
+
+.jlb {
+	position: relative;
+	width   : 100%;
+	height  : 1300px;
+
+}
+
+.jlb_kj {
+	position         : relative;
+	left             : 10%;
+	/*    align-items: center;*/
+	/*	height        :750px;*/
+	width            : 80%;
+	background-color : #E0E0E0;
+	border-radius    : 25px;
+	box-shadow       : 0 0 35px rgba(0, 0, 0, .5);
+	overflow         : hidden;
+}
+
+.jlb_bq {
+	position: relative;
+	left    : 5%;
+	width   : 300px;
+	height  : 80px;
+	font    : 500 25px '微软雅黑';
+}
+
+.h {
+	width: 90%;
+	size : 10px;
+	color: black;
+}
+
+.jlb_nr {
+	cursor          : pointer;
+	position        : relative;
+	display         : flex;
+	width           : 84%;
+	height          : 180px;
+	left            : 8%;
+	background-color: #E0E0E0;
+	border-radius   : 15px;
+	margin          : 50px 0;
+	transition      : .5s;
+	box-shadow      : 0 0 2px rgb(0, 0, 0, .2);
+}
+
+.jlb_tk {
+	position     : relative;
+	width        : 180px;
+	height       : 150px;
+	border-radius: 15px;
+	overflow     : hidden;
+	top          : 15px;
+	left         : 20px;
+	/*	box-shadow: 1px 1px 12px grey;*/
+}
+
+.jlb_img {
+	position     : relative;
+	left         : -40%;
+	/*	box-shadow: 1px 1px 12px grey;*/
+}
+
+.jlb_text {
+	position: relative;
+	width   : 60%;
+	left    : 60px;
+}
+
+.jlb_text1 {
+	font          : 500 20px '微软雅黑';
+	color         : gray;
+	letter-spacing: 2px;
+}
+
+.jlb_text2 {
+	top           : -20px;
+	position      : relative;
+	font          : 900 30px '微软雅黑';
+	color         : black;
+	letter-spacing: 5px;
+}
+
+.jlb_text3 {
+	top           : -35px;
+	position      : relative;
+	font          : 500 20px '微软雅黑';
+	color         : gray;
+	letter-spacing: 3px;
+}
+
+.jlb_time {
+	position : relative;
+	width    : 20%;
+	left     : 70px;
+	top      : 50%;
+	transform: translateY(-50%);
+}
+
+.jlb_time1 {
+	text-align: center;
+	top       : 0;
+	position  : relative;
+	font      : 900 40px '微软雅黑';
+	color     : black;
+	transition: .5s;
+}
+
+.jlb_time2 {
+	text-align    : center;
+	left          : 1%;
+	top           : -10px;
+	position      : relative;
+	font          : 800 25px '微软雅黑';
+	color         : #424242;
+	letter-spacing: 3px;
+	transition    : .5s;
+}
+
+.jlb_an {
+	position    : absolute;
+	cursor      : pointer;
+	left        : 80%;
+	top         : 50%;
+	transform   : translateY(-50%);
+	opacity     : 0;
+	transition  : .3s;
+	padding-left: 50px;
+}
+
+
+.jlb_nr:hover {
+	box-shadow      : 1px 1px 12px black;
+	background-color: white;
+}
+
+.jlb_nr:hover .jlb_an {
+	opacity   : 1;
+	left      : 99%;
+	transition: .5s .2s;
+}
+
+.jlb_nr:hover .jlb_time1 {
+	top       : -20px;
+	transition: .5s .2s;
+}
+
+.jlb_nr:hover .jlb_time2 {
+	top       : 20px;
+	transition: .5s .2s;
+}
+
+.ov {
+	cursor          : pointer;
+	position        : relative;
+	background-color: white;
+	width           : 150px;
+	height          : 40px;
+	margin          : 10px;
+	left            : 45%;
+	top             : 50%;
+	transform       : translateY(-50%);
+	box-shadow      : 1px 1px 8px grey;
+	border-radius   : 15px;
+}
+
+.ovs {
+	position  : relative;
+	text-align: center;
+	top       : 50%;
+	transform : translateY(-50%);
+	font      : 800 20px '微软雅黑';
+}
+
+.ov:hover {
+	background-color: #FB1E55;
+	transition      : .5s;
+}
+
+.ov:hover .ovs {
+	color     : white;
+	transition: .5s;
+}
+
+/* --------页脚------------------------------------------------------------- */
+
+/* 页脚制作 */
+.footer-bottom {
+	display             : flex;
+	justify-content     : space-around;
+	background-image    : url(../img/footer-background.png);
+	background-repeat   : repeat-x;
+	height              : 141px;
+	font-size           : 28px;
+	font-weight         : bold;
+	color               : rgb(160, 161, 161);
+	line-height         : 141px;
+	text-align          : center;
+	/* flex-wrap        : wrap; */
+	width               : 100%;
+}
+
+/* 浮动首页按钮 */
+.top {
+	position : fixed;
+	font-size: 30px;
+	right    : 5%;
+	bottom   : 5%;
+}
+
+.top i {
+	color: #bfa;
+}
+
+.footer-bottom a:link,
+.footer-bottom a:visited {
+	color: rgb(160, 161, 161);
+}
+
+
+a:link,
+a:visited {
+	text-decoration: none;
+	/* color          : inherit; */
+}

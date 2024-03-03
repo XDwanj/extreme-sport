@@ -1,0 +1,918 @@
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color          : inherit;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: table;
+    clear  : both;
+}
+
+/* 总体布局 */
+body {
+    font-size       : 14px;
+    font-size       : '微软雅黑';
+    background-color: rgb(248, 248, 248);
+}
+
+/* 头部布局 */
+header {
+    height  : 100%;
+    /* 设置相对定位 */
+    position: relative;
+}
+
+/* 菜单 */
+/* 头部的蓝条 */
+.menu-background-top {
+    display            : block;
+    height             : 60px;
+    width              : 100%;
+    background-color   : rgb(0, 22, 43);
+    /* position        : absolute; */
+    top                : 0;
+    z-index            : -1;
+}
+
+/* 菜单布局 */
+.menu {
+    /* 临时的 */
+    /* overflow              : hidden; */
+    z-index        : 2;
+    display        : flex;
+    backdrop-filter: blur(3px);
+    position       : fixed;
+    height         : 60px;
+    width          : 100%;
+    margin         : 0 auto;
+    top            : 0;
+    left           : 0;
+    right          : 0;
+    margin         : auto;
+    justify-content: center;
+}
+
+/* menu中的超链接布局 */
+.menu a {
+    z-index: 666;
+    opacity            : 1;
+    /* background-color: #bfa; */
+    transition         : .3s .2s;
+    border-radius      : 20px 20px 20px 20px;
+    top                : 0;
+    position           : relative;
+    line-height        : 60px;
+    /* 改为块元素 */
+    display            : block;
+    /* 设置行高 */
+    text-decoration    : none;
+    /* 设置颜色 */
+    color              : #ffffff;
+    /* 设置字体大小 */
+    font-size          : 18px;
+    /* 设置内边距 */
+    padding            : 0 95px;
+    /* 设置阴影 */
+    box-shadow         : 0px 0px 50px rgba(0, 0, 0, .0);
+}
+
+/* 轮流呈现 */
+.menu .menu-title-home a {
+    animation          : menu-begin 1s .2s backwards;
+}
+.menu .menu-sport a {
+    animation          : menu-begin 1s .4s backwards;
+}
+.menu .menu-sportsman a {
+    animation          : menu-begin 1s .6s backwards;
+}
+.menu .menu-activities a {
+    animation          : menu-begin 1s .8s backwards;
+}
+.menu .menu-commodities a {
+    animation          : menu-begin 1s 1s backwards;
+}
+
+
+@keyframes menu-begin {
+    0% {
+        top             : 100px;
+        opacity         : 0;
+        background-color: rgb(26, 46, 65);
+        backdrop-filter : blur(5px);
+    }
+
+    100% {
+        top    : 0;
+        opacity: 1;
+    }
+}
+
+.menu ul:hover a {
+    top             : 10px;
+    /* 设置hover的背景变色 */
+    background-color: rgb(26, 46, 65);
+    /* 设置hover生效延迟 */
+    transition      : 0.5s ease;
+    /* 设置hover阴影 */
+    box-shadow      : 0px 0px 50px rgba(0, 0, 0, .5);
+    /* 毛玻璃效果 */
+    backdrop-filter : blur(5px);
+}
+
+/* 运动介绍 ok */
+.menu-list-sport .menu-sport+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 262px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-sport:hover .menu-sport+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 运动员OK */
+.menu-list-sportsman .menu-sportsman+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 244px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-sportsman:hover .menu-sportsman+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 活动介绍 */
+.menu-list-activities .menu-activities+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 262px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-activities:hover .menu-activities+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 商品ok */
+.menu-list-commodities .menu-commodities+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 226px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-commodities:hover .menu-commodities+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+.background-top {
+    height          : 60px;
+    width           : 100%;
+    background-color: chocolate;
+}
+
+
+/* 头部完成---------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* 内容区开始-------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 垫高 */
+.hall {
+    height          : 60px;
+    background-color: #00162b;
+    width           : 100%;
+}
+
+
+
+/* 顶部图片 ---------------------*/
+.head-img {
+    height          : 340px;
+    background-color: blue;
+    position        : relative;
+}
+
+.himg {
+    width            : 100%;
+    height           : 100%;
+    background-image : url(../img/background.jpeg);
+    background-repeat: no-repeat;
+    background-size  : cover;
+}
+
+.himg-c {
+    width     : 100%;
+    height    : 100%;
+    background: linear-gradient(to top, rgba(0, 22, 43, 1), rgba(13, 31, 46, 0.6));
+    float     : left;
+    position  : absolute;
+    top       : 0px;
+}
+
+.w {
+    text-align    : center;
+    font-weight   : 700;
+    color         : #eff1f2;
+    font-size     : 44px;
+    /* line-height: 60px; */
+    width         : 100%;
+    margin-top    : 48px;
+}
+
+.w2 {
+    font-weight  : 400;
+    font-size    : 16px;
+    line-height  : 24px;
+    color        : rgba(255, 255, 255, .6);
+    overflow-wrap: break-word;
+    text-align   : center;
+    width        : 500px;
+    margin       : 7px auto 0px;
+}
+
+/* 顶部图片结束 -----------------*/
+
+.PensonF {
+    margin  : 390px auto;
+    position: absolute;
+    left    : 0;
+    top     : 0;
+    right   : 0;
+    bottom  : 0;
+}
+
+.body1 {
+    display           : flex;
+    justify-content   : center;
+    align-items       : center;
+    /* background     : #16384c; */
+}
+
+.container {
+    position       : relative;
+    width          : 1600px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    flex-wrap      : wrap;
+    padding        : 30px;
+}
+
+.container .card {
+    position        : relative;
+    max-width       : 300px;
+    height          : 210px;
+    background      : #fff;
+    margin          : 30px 10px;
+    padding         : 20px 15px;
+    display         : flex;
+    flex-direction  : column;
+    box-shadow      : 0 1px 0 rgba(200, 200, 200, 0.5);
+    transition      : 0.3s ease-in-out;
+    background-color: #f8f8f8;
+}
+
+.container .card:hover {
+    height: 268px;
+}
+
+.container .card .imgBx {
+    position  : relative;
+    width     : 260px;
+    height    : 324px;
+    top       : -190px;
+    left      : 2px;
+    z-index   : 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container .card .imgBx img {
+    max-width    : 100%;
+    border-radius: 14px;
+}
+
+.container .card .content {
+    position  : relative;
+    margin-top: -140;
+    padding   : 10px 15px;
+    text-align: center;
+    color     : #111;
+    visibility: hidden;
+    opacity   : 0;
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+    visibility      : visible;
+    opacity         : 1;
+    margin-top      : -106px;
+    transition-delay: 0.3s;
+}
+
+
+.bottem {
+    height          : 50px;
+    background-color: #00162b;
+}
+
+
+
+
+/* 导航开始----------------------------------------------------------------------- */
+.navigation-m {
+    margin-top         : 400px;
+    height             : 800px;
+    /* background-color: blueviolet; */
+}
+
+.navigation-main {
+    width              : 1600px;
+    height             : 100%;
+    margin             : 420px auto;
+    /* background-color: brown; */
+}
+
+.navigation-m {
+    margin     : 0;
+    padding    : 0;
+    box-sizing : border-box;
+    font-family: sans-serif;
+}
+
+.navigation-main {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    /* min-height  : 40vh; */
+    /* background  : #6843d1; */
+}
+
+.container2 {
+    left    : -86px;
+    position: relative;
+}
+
+.container2 .navigation {
+    position     : relative;
+    width        : 80px;
+    height       : 360px;
+    background   : #fff;
+    border-radius: 10px;
+    overflow     : hidden;
+    box-shadow   : 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition   : 0.5s;
+}
+
+.container2 .navigation.active {
+    width: 300px;
+}
+
+.container2 .navigation ul {
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    width   : 100%;
+}
+
+.container2 .navigation ul li {
+    position  : relative;
+    list-style: none;
+    width     : 100%;
+}
+
+.container2 .navigation ul li:hover {
+    background: #efefef;
+}
+
+.container2 .navigation ul li a {
+    position       : relative;
+    display        : block;
+    width          : 100%;
+    display        : flex;
+    text-decoration: none;
+    color          : #00162b;
+    font-weight    : 500;
+}
+
+.container2 .navigation ul li a .icon {
+    position   : relative;
+    display    : block;
+    min-width  : 80px;
+    height     : 60px;
+    line-height: 60px;
+    text-align : center;
+}
+
+.container2 .navigation ul li a .icon .fa {
+    font-size: 24px;
+}
+
+.container2 .navigation ul li a .title {
+    position   : relative;
+    display    : block;
+    height     : 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.toggle {
+    position        : absolute;
+    top             : calc(50% - 26px);
+    right           : -28px;
+    width           : 40px;
+    height          : 40px;
+    background      : #f5f5f5;
+    cursor          : pointer;
+    border          : 5px solid #00162b;
+    border-radius   : 50%;
+    background-color: #ffffff;
+}
+
+.toggle::before {
+    content    : '\f054';
+    font-family: fontAwesome;
+    position   : absolute;
+    width      : 100%;
+    height     : 100%;
+    line-height: 41px;
+    text-align : center;
+    font-size  : 16px;
+    color      : #00162b;
+}
+
+.toggle.active::before {
+    content: '\f053';
+}
+
+.icon2 {
+    width         : 2em;
+    height        : 3em;
+    vertical-align: -1.15em;
+    fill          : currentColor;
+    overflow      : hidden;
+}
+
+
+
+
+
+
+.myGAL {
+    height             : 800px;
+    width              : 1200px;
+    /* background-color: cadetblue; */
+    position           : relative;
+    border-bottom      : 1px #e2e3e5 solid;
+}
+
+.myGAL-h1 {
+    font-size    : 46px;
+    color        : #1a1919;
+    display      : block;
+    margin-bottom: 26px;
+    margin-left  : 28px;
+}
+
+.myGAL-h2 {
+    margin  : 8px 32px;
+    color   : #7b7c7f;
+    display : block;
+    position: absolute;
+    left    : 6px;
+    top     : 50px;
+}
+
+.myGAL-w {
+    /* background-color: coral; */
+    position: relative;
+}
+
+
+.fukuan {
+    margin-top: 38px;
+}
+
+
+.gu {
+    position        : relative;
+    margin          : 0px 0;
+    background-color: #f8f8f8;
+    height          : 212px;
+    transition      : 0.2s;
+    box-shadow      : 0px 0px 0 rgba(0, 0, 0, 0);
+    border-radius   : 10px;
+}
+
+.gu-img {
+    width      : 154px;
+    height     : 154px;
+    padding-top: 28px;
+    margin-left: 24px;
+}
+
+.gu img {
+    width        : 100%;
+    height       : 100%;
+    border-radius: 100%;
+}
+
+.gu-wen-p {
+    color      : #767575;
+    float      : left;
+    margin-left: 280px;
+    margin-top : -128px;
+}
+
+.gu-wen-p2 {
+    float      : left;
+    margin-left: 280px;
+    color      : #1a1919;
+    font-size  : 22px;
+    margin-top : -100px;
+    font-weight: 700;
+}
+
+.gu a {
+    text-decoration: none;
+}
+
+.gu-img2 {
+    width              : 22px;
+    height             : 16px;
+    position           : absolute;
+    /* background-color: coral; */
+    top                : 45%;
+    left               : 1084px;
+}
+
+.gu-wen-p3 {
+    position: absolute;
+    top     : 0;
+    left    : 26px;
+    color   : #767575;
+}
+
+.gu:hover {
+    z-index         : 6;
+    background-color: #ffffff;
+    box-shadow      : 0px 0px 20px rgba(0, 0, 0, 0.3);
+    transition      : 0.2s;
+    /* 延迟效果 */
+}
+
+.gu2-img2 {
+    width              : 22px;
+    height             : 16px;
+    position           : absolute;
+    /* background-color: coral; */
+    top                : 45%;
+    left               : 1084px;
+}
+
+.gu2-wen-p3 {
+    width   : 10px;
+    position: absolute;
+    top     : 0;
+    left    : 26px;
+    color   : #767575;
+}
+
+
+.gu3-img2 {
+    width              : 22px;
+    height             : 16px;
+    position           : absolute;
+    /* background-color: coral; */
+    top                : 45%;
+    left               : 1084px;
+}
+
+
+
+.navigation-bottom {
+    height                : 200px;
+    width                 : 100%;
+    /* margin-top         : 200px; */
+
+    background-image: linear-gradient(125deg, #2c3e50, #27ae60, #2980b9, #e74c3c, #8e44ad);
+    background-size : 400%;
+    animation       : bganimation 15s infinite;
+}
+
+/* 渐变 */
+@keyframes bganimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+.logo {
+    width              : 1500px;
+    height             : 100%;
+    /* background-color: burlywood; */
+    margin             : 0 auto;
+    position           : relative;
+}
+
+.logo-img {
+    width               : 238px;
+    height              : 48px;
+    /* background-color : chartreuse; */
+    position            : absolute;
+    top                 : 80px;
+    background-image    : url(../img/redbullcom-logo.svg);
+    background-repeat   : no-repeat;
+}
+
+.logo-w {
+    width              : 400px;
+    height             : 100px;
+    /* background-color: chocolate; */
+    position           : absolute;
+    margin             : auto;
+    left               : 0;
+    right              : 0;
+    top                : 0;
+    bottom             : 0;
+
+
+}
+
+.logo-w>span {
+    font-weight   : 800;
+    color         : #ffffff;
+    line-height   : 100px;
+    font-size     : 50px;
+    /* text-align : center; */
+    margin-left   : 86px;
+}
+
+/* 导航结束------------------------------------------------------------------------ */
+
+
+
+
+
+/* 分享------------------------------------------------------------------------ */
+.Share {
+    margin-top         : 60px;
+    height             : 166px;
+    /* background-color: coral; */
+}
+
+.Share-w {
+    width              : 200px;
+    height             : 20px;
+    font-size          : 14px;
+    font-weight        : 700;
+    color              : #737272;
+    margin             : 0 auto;
+    line-height        : 52px;
+    /* background-color: darkgreen; */
+    text-align         : center;
+    /* padding         : 10px; */
+}
+
+.Share-img {
+    width              : 400px;
+    height             : 60px;
+    /* background-color: darkgrey; */
+    margin             : 28px auto;
+    /* 弹性盒子 */
+    flex-direction     : row;
+    display            : flex;
+}
+
+.Share-img1,
+.Share-img2,
+.Share-img3,
+.Share-img4,
+.Share-img5 {
+    width              : 42px;
+    height             : 42px;
+    float              : left;
+    background-repeat  : no-repeat;
+    margin             : 8px 18px;
+    /* background-color: darkkhaki; */
+    /* width           : 10%; */
+    border-radius      : 50%;
+    opacity            : 1;
+    transition         : 0.4s;
+}
+
+.icon3 {
+    width         : 3em;
+    height        : 3em;
+    vertical-align: -1.15em;
+    fill          : currentColor;
+    overflow      : hidden;
+}
+
+.Share-img1:hover,
+.Share-img2:hover,
+.Share-img3:hover,
+.Share-img4:hover,
+.Share-img5:hover {
+    /* width            : 40px;
+    height           : 40px; */
+    opacity: .4;
+
+    background-color: rgb(252, 252, 252, 0.2);
+    transition      : 0.4s;
+}
+
+/* 分享结束--------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 广告--------------------------------------- */
+.advertisement {
+    width   : 800px;
+    height  : 266px;
+    margin  : 24px auto;
+    position: relative;
+}
+
+.advertisement-w {
+    width        : 134px;
+    height       : 34px;
+    color        : #1a1919;
+    font-size    : 22px;
+    font-weight  : 700;
+    border-bottom: 1px #e2e3e5 solid;
+    left         : 0;
+    right        : 0;
+    margin       : 20px auto;
+    position     : absolute;
+}
+
+
+.advertisement-img1,
+.advertisement-img2 {
+    top              : 56px;
+    background-repeat: no-repeat;
+}
+
+.advertisement-img1 {
+    width           : 258px;
+    height          : 110px;
+    left            : 134px;
+    margin          : 40px auto;
+    background-image: url(../img/广告1.png);
+    position        : absolute;
+}
+
+
+.advertisement-img2 {
+    width           : 256px;
+    height          : 110px;
+    left            : 424px;
+    margin          : 40px auto;
+    background-image: url(../img/广告2.png);
+    position        : absolute;
+}
+
+/* 广告结束--------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 内容区结束--------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+.icon>i>img {
+    width         : 2em;
+    height        : 3em;
+    vertical-align: -1.15em;
+    fill          : currentColor;
+    overflow      : hidden;
+}
+
+.icon2>i>img {
+    width         : 3em;
+    height        : 3em;
+    vertical-align: -1.15em;
+    fill          : currentColor;
+    overflow      : hidden;
+}
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 页脚制作 */
+.footer-bottom {
+    display             : flex;
+    justify-content     : space-around;
+    background-image    : url(../img/bg.png);
+    background-repeat   : repeat-x;
+    height              : 141px;
+    font-size           : 28px;
+    font-weight         : bold;
+    color               : rgb(160, 161, 161);
+    line-height         : 141px;
+    text-align          : center;
+    /* flex-wrap        : wrap; */
+}
+
+/* 浮动首页按钮 */
+.top {
+    position : fixed;
+    font-size: 30px;
+    right    : 5%;
+    bottom   : 5%;
+}
+
+.top i {
+    color: #bfa;
+}

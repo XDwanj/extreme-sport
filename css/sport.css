@@ -1,0 +1,415 @@
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: table;
+    clear  : both;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color          : inherit;
+}
+
+/* 总体布局 */
+body {
+    font-size       : 14px;
+    font-family     : '微软雅黑';
+    background-color: rgb(248, 248, 248);
+}
+
+a {
+    /* 去除下划线 */
+    text-decoration: none;
+}
+
+/* 头部布局 */
+header {
+    /* background-color: rgb(0, 22, 43); */
+    height  : 100%;
+    /* 设置相对定位 */
+    position: relative;
+}
+
+/* 菜单 */
+/* 头部的蓝条 */
+.menu-background-top {
+    display            : block;
+    height             : 60px;
+    width              : 100%;
+    background-color   : rgb(0, 22, 43);
+    /* position        : absolute; */
+    top                : 0;
+    z-index            : -1;
+}
+
+/* 菜单布局 */
+.menu {
+    /* 临时的 */
+    /* overflow              : hidden; */
+    z-index        : 2;
+    display        : flex;
+    backdrop-filter: blur(3px);
+    position       : fixed;
+    height         : 60px;
+    width          : 100%;
+    margin         : 0 auto;
+    top            : 0;
+    left           : 0;
+    right          : 0;
+    margin         : auto;
+    justify-content: center;
+}
+
+/* menu中的超链接布局 */
+.menu a {
+    opacity            : 1;
+    /* background-color: #bfa; */
+    transition         : .3s .2s;
+    border-radius      : 20px 20px 20px 20px;
+    top                : 0;
+    position           : relative;
+    line-height        : 60px;
+    /* 改为块元素 */
+    display            : block;
+    /* 设置行高 */
+    text-decoration    : none;
+    /* 设置颜色 */
+    color              : #ffffff;
+    /* 设置字体大小 */
+    font-size          : 18px;
+    /* 设置内边距 */
+    padding            : 0 95px;
+    /* 设置阴影 */
+    box-shadow         : 0px 0px 50px rgba(0, 0, 0, .0);
+}
+
+/* 轮流呈现 */
+.menu .menu-title-home a {
+    animation          : menu-begin 1s .2s backwards;
+}
+.menu .menu-sport a {
+    animation          : menu-begin 1s .4s backwards;
+}
+.menu .menu-sportsman a {
+    animation          : menu-begin 1s .6s backwards;
+}
+.menu .menu-activities a {
+    animation          : menu-begin 1s .8s backwards;
+}
+.menu .menu-commodities a {
+    animation          : menu-begin 1s 1s backwards;
+}
+
+
+@keyframes menu-begin {
+    0% {
+        top             : 100px;
+        opacity         : 0;
+        background-color: rgb(26, 46, 65);
+        backdrop-filter : blur(5px);
+    }
+
+    100% {
+        top    : 0;
+        opacity: 1;
+    }
+}
+
+.menu ul:hover a {
+    top             : 10px;
+    /* 设置hover的背景变色 */
+    background-color: rgb(26, 46, 65);
+    /* 设置hover生效延迟 */
+    transition      : 0.5s ease;
+    /* 设置hover阴影 */
+    box-shadow      : 0px 0px 50px rgba(0, 0, 0, .5);
+    /* 毛玻璃效果 */
+    backdrop-filter : blur(5px);
+}
+
+/* 运动介绍 ok */
+.menu-list-sport .menu-sport+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 262px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-sport:hover .menu-sport+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 运动员OK */
+.menu-list-sportsman .menu-sportsman+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 244px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-sportsman:hover .menu-sportsman+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 活动介绍 */
+.menu-list-activities .menu-activities+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 262px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-activities:hover .menu-activities+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 商品ok */
+.menu-list-commodities .menu-commodities+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 226px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-commodities:hover .menu-commodities+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+.background-top {
+    height          : 60px;
+    width           : 100%;
+    background-color: chocolate;
+}
+
+
+
+/* -----------------main------------------------------------------------ */
+
+/* 最外边这个模块的外壳 */
+.sport-black-wrapped {
+    margin             : 0 auto;
+    /* background-color: #bfa; */
+    width              : 100%;
+    height             : 1000px;
+}
+
+/* 上边的框架 */
+.sport-top-content {
+    /* opacity: 0; */
+    /* background-color: red; */
+    /* background-image   : url(../img/悬崖跳水.jpg); */
+    width                 : 100%;
+    height                : 500px;
+    margin                : 0 auto;
+    /* background-size    : cover; */
+    /* background-position: center; */
+    position              : relative;
+    overflow              : hidden;
+}
+
+/* 视频标签 */
+.sport-top-content video {
+    width: 100%;
+}
+
+/* 视频的遮罩 */
+.sport-top-content-mask {
+    /* float                 : left; */
+    position              : absolute;
+    background-size       : cover;
+    width                 : 100%;
+    height                : 100%;
+    background-image      : linear-gradient(to top, rgba(0, 22, 43, .9), rgba(0, 22, 43, .2));
+    /* background-color   : blue; */
+    /* float              : left; */
+}
+
+/* 视频上的文字 */
+.top-text {
+    opacity        : 0;
+    position       : absolute;
+    color          : #ffffff;
+    font-size      : 25px;
+    top            : 100px;
+    /* left        : 320px; */
+    /* margin-right: 300px; */
+    margin         : 0 10%;
+    line-height    : 50px;
+}
+
+.top-text h2 {
+    font-size  : 54px;
+    font-weight: bold;
+}
+
+.top-text p {
+    margin-top : 50px;
+    margin-left: 30px;
+    color      : #aeb5bc;
+}
+
+/* 下面的框架 */
+.sport-bottom-content {
+    /* overflow: hidden; */
+    /* border-radius: 20px; */
+    background-color: rgb(0, 22, 43);
+    width           : 100%;
+    height          : 500px;
+    margin          : 0 auto;
+}
+
+/* 相对定位移动的盒子 */
+.introduce-list {
+    /* clip-path       : ellipse(50% 50% at 50% 50%); */
+    transition      : .7s;
+    position        : relative;
+    top             : -50%;
+    background-color: rgba(0, 0, 0, .5);
+    width           : 70%;
+    height          : 500px;
+    margin          : 0 auto;
+    border-radius   : 20px;
+    overflow        : hidden;
+}
+
+/* 下边的遮罩 */
+.inside-mask-left {
+    float           : left;
+    background-image: linear-gradient(to right, rgba(0, 22, 43, .9), rgba(0, 22, 43, .6), rgba(0, 22, 43, 0));
+    width           : 100%;
+    height          : 100%;
+    /* position     : absolute; */
+}
+
+/* 下边图片的通用设置 */
+.introduce-img {
+    background-repeat  : no-repeat;
+    background-position: center;
+    background-size    : cover;
+    object-fit         : fill;
+    width              : 100%;
+    height             : 600px;
+    margin             : 0 auto;
+}
+
+/* 图片链接 */
+.img-1-bottom {
+    background-image: url(../img/大卫贝尔-跑酷鼻祖.jpg);
+}
+
+.img-2-bottom {
+    background-image: url(../img/滑雪例图.jpg);
+}
+
+.img-3-bottom {
+    background-image: url(../img/翼装飞行.jpg);
+}
+
+/* 下边文本的浮动遮罩和文字 */
+.bottom-text {
+    transition    : .7s;
+    opacity       : 0;
+    margin-right  : 30px;
+    margin-top    : 30px;
+    margin-left   : 30px;
+    color         : #ffffff;
+    font-size     : 20px;
+    /* line-height: 50px; */
+}
+
+.bottom-text h3 {
+    font-size  : 54px;
+    font-weight: bold;
+}
+
+.bottom-text p {
+    color      : #aeb5bc;
+    margin-top : 30px;
+    margin-left: 15px;
+    line-height: 50px;
+}
+
+/* 鼠标悬浮效果 */
+.sport-black-wrapped:hover .introduce-list {
+    top          : -20%;
+    transition   : 0.7s 0;
+    /* clip-path : polygon(0 0, 100% 0, 100% 100%, 0% 100%); */
+}
+
+.sport-black-wrapped:hover .top-text {
+    opacity   : 1;
+    transition: 0.7s 0.4s;
+}
+
+.sport-black-wrapped:hover .bottom-text {
+    opacity   : 1;
+    transition: 0.7s 0;
+}
+
+
+/* 页脚制作 */
+.footer-bottom {
+    display             : flex;
+    justify-content     : space-around;
+    background-image    : url(../img/footer-background.png);
+    background-repeat   : repeat-x;
+    height              : 141px;
+    font-size           : 28px;
+    font-weight         : bold;
+    color               : rgb(160, 161, 161);
+    line-height         : 141px;
+    text-align          : center;
+    /* flex-wrap        : wrap; */
+}
+
+.footer-bottom a:link,
+.footer-bottom a:visited {
+    color: rgb(160, 161, 161);
+}

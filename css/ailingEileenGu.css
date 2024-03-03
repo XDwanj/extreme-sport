@@ -1,0 +1,803 @@
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: table;
+    clear  : both;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color          : inherit;
+}
+
+/* 总体布局 */
+body {
+    font-size       : 14px;
+    font-size       : '微软雅黑';
+    background-color: rgb(248, 248, 248);
+}
+
+/* 头部布局 */
+header {
+    height  : 100%;
+    /* 设置相对定位 */
+    position: relative;
+}
+
+
+/* 菜单 */
+/* 头部的蓝条 */
+.menu-background-top {
+    display            : block;
+    height             : 60px;
+    width              : 100%;
+    background-color   : rgb(0, 22, 43);
+    /* position        : absolute; */
+    top                : 0;
+    z-index            : -1;
+}
+
+/* 菜单布局 */
+.menu {
+    /* 临时的 */
+    /* overflow              : hidden; */
+    z-index        : 2;
+    display        : flex;
+    backdrop-filter: blur(3px);
+    position       : fixed;
+    height         : 60px;
+    width          : 100%;
+    margin         : 0 auto;
+    top            : 0;
+    left           : 0;
+    right          : 0;
+    margin         : auto;
+    justify-content: center;
+}
+
+/* menu中的超链接布局 */
+.menu a {
+    opacity            : 1;
+    /* background-color: #bfa; */
+    transition         : .3s .2s;
+    border-radius      : 20px 20px 20px 20px;
+    top                : 0;
+    position           : relative;
+    line-height        : 60px;
+    /* 改为块元素 */
+    display            : block;
+    /* 设置行高 */
+    text-decoration    : none;
+    /* 设置颜色 */
+    color              : #ffffff;
+    /* 设置字体大小 */
+    font-size          : 18px;
+    /* 设置内边距 */
+    padding            : 0 95px;
+    /* 设置阴影 */
+    box-shadow         : 0px 0px 50px rgba(0, 0, 0, .0);
+}
+
+/* 轮流呈现 */
+.menu .menu-title-home a {
+    animation          : menu-begin 1s .2s backwards;
+}
+.menu .menu-sport a {
+    animation          : menu-begin 1s .4s backwards;
+}
+.menu .menu-sportsman a {
+    animation          : menu-begin 1s .6s backwards;
+}
+.menu .menu-activities a {
+    animation          : menu-begin 1s .8s backwards;
+}
+.menu .menu-commodities a {
+    animation          : menu-begin 1s 1s backwards;
+}
+
+
+@keyframes menu-begin {
+    0% {
+        top             : 100px;
+        opacity         : 0;
+        background-color: rgb(26, 46, 65);
+        backdrop-filter : blur(5px);
+    }
+
+    100% {
+        top    : 0;
+        opacity: 1;
+    }
+}
+
+.menu ul:hover a {
+    top             : 10px;
+    /* 设置hover的背景变色 */
+    background-color: rgb(26, 46, 65);
+    /* 设置hover生效延迟 */
+    transition      : 0.5s ease;
+    /* 设置hover阴影 */
+    box-shadow      : 0px 0px 50px rgba(0, 0, 0, .5);
+    /* 毛玻璃效果 */
+    backdrop-filter : blur(5px);
+}
+
+/* 运动介绍 ok */
+.menu-list-sport .menu-sport+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 262px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-sport:hover .menu-sport+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 运动员OK */
+.menu-list-sportsman .menu-sportsman+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 244px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-sportsman:hover .menu-sportsman+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 活动介绍 */
+.menu-list-activities .menu-activities+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 262px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-activities:hover .menu-activities+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 商品ok */
+.menu-list-commodities .menu-commodities+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 226px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-commodities:hover .menu-commodities+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+.background-top {
+    height          : 60px;
+    width           : 100%;
+    background-color: chocolate;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 内容区css */
+
+/* main {
+    margin: 60px auto;
+} */
+
+/* .box {
+    display        : contents;
+    justify-content: center;
+    height         : 1000px;
+} */
+
+/* .box1 {
+    width     : 100%;
+    height    : 500px;
+    object-fit: cover;
+} */
+
+/* 头部视频--------------------------------------------------- */
+
+.mp4 {
+    /* display        : contents; */
+    height            : 520px;
+    /* border         : 10px red solid; */
+    position          : relative;
+}
+
+.mp4,
+video {
+    width      : 100%;
+    height     : 520px;
+    object-fit : cover;
+    /* position: absolute; */
+}
+
+.To-w {
+    position       : absolute;
+    /* 去除文字下划线 */
+    text-decoration: none;
+    color          : #ffffff;
+    top            : 382px;
+    left           : 154px;
+    font-weight    : bold;
+}
+
+.mp4-w {
+    margin-left  : 4px;
+    font-size    : 16px;
+    margin-bottom: 4px;
+}
+
+.mp4-w2 {
+    font-size: 48px;
+}
+
+
+/* 介绍开始---------------------------------------------------- */
+
+.Introduction-bgc {
+    width           : 100%;
+    background-color: #ffffff;
+}
+
+.Introduction {
+    width                    : 1519px;
+    height                   : 250px;
+    margin                   : 0 auto;
+    /* background-color      : seagreen; */
+    /* 相对定位 */
+    /* position              : relative; */
+    display                  : flex;
+    flex-direction           : row;
+}
+
+
+
+
+.left-1 {
+    width : 272px;
+    height: 172px;
+    margin: auto;
+    float : left;
+}
+
+.left-1-Text-1 {
+    position: relative;
+    top     : 12px;
+    left    : 86px;
+    /* float: left; */
+}
+
+
+.left-1-img {
+    width            : 54px;
+    height           : 74px;
+    background-image : url(../img/感叹号.png);
+    background-repeat: no-repeat;
+}
+
+.left-1-w {
+    font-size: 32px;
+}
+
+
+.left-2 {
+    width      : 272px;
+    height     : 172px;
+    margin     : auto;
+    float      : left;
+    border-left: 1px #e2e3e5 solid;
+}
+
+
+.left-2-wbox1,
+.left-3-wbox1 {
+    height     : 50px;
+    margin-top : 14px;
+    margin-left: 34px;
+}
+
+
+.left-2-wbox2,
+.left-3-wbox2 {
+    margin-top : 20px;
+    margin-left: 34px;
+    height     : 50px;
+}
+
+
+.left-4-Text-1,
+.left-3-Text-1,
+.left-3-Text-3,
+.left-2-Text-3,
+.left-2-Text-1 {
+    font-weight  : 700;
+    font-size    : 12px;
+    color        : #737477;
+    margin-bottom: 6px;
+}
+
+
+
+
+.left-3 {
+    width      : 272px;
+    height     : 172px;
+    margin     : auto;
+    float      : left;
+    border-left: 1px #e2e3e5 solid;
+}
+
+
+
+
+.left-4 {
+    margin-top  : 40px;
+    width       : 272px;
+    height      : 80px;
+    margin-right: 46px;
+    float       : left;
+    border-left : 1px #e2e3e5 solid;
+}
+
+
+
+.left-4-Text-1 {
+    width : 24px;
+    height: 18px;
+}
+
+.left-4-wbox1 {
+    margin-top : 10px;
+    margin-left: 15px;
+}
+
+.left-4-img,
+img {
+    float: left;
+}
+
+.left-4-Text-2 {
+    display    : inline-flex;
+    margin-top : 8px;
+    font-size  : 16px;
+    color      : #1a1919;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+
+.left-4-Text-2,
+.left-3-Text-2,
+.left-4-Text-4,
+.left-2-Text-2,
+.left-2-Text-4 {
+    font-weight: 500;
+}
+
+/* 介绍结束--------------------------------------------------------------- */
+
+
+/* 传记开始---------------------------------------------------------------- */
+
+.biography {
+    width              : 1519px;
+    height             : 1136px;
+    margin             : 0 auto;
+    /* background-color: cadetblue; */
+    /* 弹性盒子 */
+    flex-direction     : row;
+    display            : flex;
+}
+
+
+.biography-left-box1 {
+    width              : 68px;
+    height             : 120px;
+    margin-top         : 108px;
+    margin-left        : 150px;
+    /* background-color: chartreuse; */
+}
+
+.biography-Text-h1 {
+    font-size  : 32px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+
+.biography-Text-img {
+    width            : 42px;
+    height           : 42px;
+    margin-bottom    : 10px;
+    background-image : url(../img/传记.png);
+    background-repeat: no-repeat;
+}
+
+
+.biography-left-box2 {
+    width              : 732px;
+    height             : 850px;
+    margin-left        : 164px;
+    margin-top         : 108px;
+    /* background-color: chocolate; */
+}
+
+/* .biography-left-box2:hover {
+    background-color: #f8f8f8;
+    box-shadow      : 0px 0px 30px rgba(0, 0, 0, 0.3);
+    border-radius   : 6px; */
+/* transition   : 2s ease; */
+/* } */
+
+.biography-left-box2,
+p {
+    font-size        : 20px;
+    line-height      : 32px;
+    /* line-height   :50px */
+    /* overflow      :hidden; */
+    /* padding-bottom: 50px; */
+}
+
+.biography-left-box2-h1 {
+    font-size  : 28px;
+    font-weight: 700;
+}
+
+.biography-p {
+    margin-bottom: 10px;
+}
+
+.boxREL {
+    position: relative;
+}
+
+
+.biography-person,
+.biography-person2,
+.biography-person3 {
+    width                  : 190px;
+    height                 : 228px;
+    margin-left            : 52px;
+    border-top-right-radius: 16px;
+    border-top-left-radius : 16px;
+    background-repeat      : no-repeat;
+    box-shadow             : 0px 0px 0px rgba(0, 0, 0, 0);
+    transition             : .3s;
+}
+
+
+.biography-person {
+    margin-top      : 138px;
+    background-image: url(../img/eileen-gu-ailing-calgary-2020.jpg);
+    position        : relative;
+}
+
+
+.biography-person2 {
+    margin-top      : 60px;
+    background-image: url(../img/glaPERSON.jpg);
+    position        : absolute;
+}
+
+.biography-person3 {
+    top             : 610px;
+    margin-top      : 100px;
+    background-image: url(../img/galPERSON2.jpg);
+    position        : absolute;
+}
+
+
+.Ptect,
+.Ptect2 {
+    height                    : 74px;
+    width                     : 100%;
+    top                       : 167px;
+    padding-top               : 6px;
+    font-weight               : 700;
+    text-align                : center;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius : 20px;
+    background-color          : #00162b;
+    color                     : #ffffff;
+    position                  : absolute;
+    box-shadow                : 0 0 0 0 rgba(0, 0, 0, .0);
+}
+
+
+
+.biography-person:hover,
+.biography-person2:hover,
+.biography-person3:hover,
+.biography-person:hover .Ptect,
+.biography-person2:hover .Ptect2,
+.biography-person3:hover .Ptect2 {
+    transition: 0.3s;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+
+.line {
+    width           : 800px;
+    height          : 1px;
+    background-color: #e2e3e5;
+    margin          : 0 auto;
+}
+
+/* ----------------------------------------------------- */
+
+/* 分享此页------------------------------------------------------ */
+
+.Share {
+    margin-top         : 60px;
+    height             : 166px;
+    /* background-color: coral; */
+}
+
+.Share-w {
+    width              : 200px;
+    height             : 20px;
+    font-size          : 14px;
+    font-weight        : 700;
+    color              : #737272;
+    margin             : 0 auto;
+    line-height        : 52px;
+    /* background-color: darkgreen; */
+    text-align         : center;
+    /* padding         : 10px; */
+}
+
+.Share-img {
+    width              : 400px;
+    height             : 60px;
+    /* background-color: darkgrey; */
+    margin             : 28px auto;
+    /* 弹性盒子 */
+    flex-direction     : row;
+    display            : flex;
+}
+
+.Share-img1,
+.Share-img2,
+.Share-img3,
+.Share-img4,
+.Share-img5 {
+    width              : 42px;
+    height             : 42px;
+    float              : left;
+    background-repeat  : no-repeat;
+    margin             : 8px 18px;
+    /* background-color: darkkhaki; */
+    /* width           : 10%; */
+    border-radius      : 50%;
+    opacity            : 1;
+    transition         : 0.4s;
+}
+
+.icon3 {
+    width         : 3em;
+    height        : 3em;
+    vertical-align: -1.15em;
+    fill          : currentColor;
+    overflow      : hidden;
+}
+
+.Share-img1:hover,
+.Share-img2:hover,
+.Share-img3:hover,
+.Share-img4:hover,
+.Share-img5:hover {
+    /* width            : 40px;
+    height           : 40px; */
+    opacity: .4;
+
+    background-color: rgb(252, 252, 252, 0.2);
+    transition      : 0.4s;
+}
+
+/* 分享此页结束--------------------------------------------------- */
+
+.recommend {
+    margin-top      : 14px;
+    height          : 218px;
+    background-color: #001e3c;
+}
+
+.recommend2 {
+    width   : 500px;
+    height  : 100%;
+    margin  : 0 auto;
+    position: relative;
+}
+
+.recommend-w {
+    top        : 50px;
+    left       : 142px;
+    font-weight: 700;
+    font-size  : 24px;
+    color      : #fff;
+    position   : absolute;
+}
+
+.recommend-w2 {
+    font-size  : 18px;
+    font-weight: 600;
+    color      : #fff;
+    top        : 16px;
+    left       : 106px;
+    position   : absolute;
+}
+
+
+.recommend-box {
+    width           : 214px;
+    height          : 52px;
+    top             : 100px;
+    left            : 142px;
+    border-radius   : 10px;
+    background-color: rgba(18, 86, 136, 1);
+    position        : absolute;
+    transition      : .3s;
+}
+
+.recommend-box-img {
+    /* width            : 42px; */
+    /* height           : 42px; */
+    top                 : 4px;
+    /* background-image : url(../fa/矢量图标/相机.svg); */
+    left                : 50px;
+    /* background-repeat   : no-repeat; */
+    position            : absolute;
+}
+
+.recommend-box:hover {
+    transform       : .3s;
+    background-color: rgba(38, 106, 156, 1);
+
+}
+
+
+/* 广告开始----------------------------------------------------------------- */
+.advertisement {
+    width   : 800px;
+    height  : 266px;
+    margin  : 0 auto;
+    position: relative;
+}
+
+.advertisement-w {
+    width        : 134px;
+    height       : 34px;
+    color        : #1a1919;
+    font-size    : 22px;
+    font-weight  : 700;
+    border-bottom: 1px #e2e3e5 solid;
+    left         : 0;
+    right        : 0;
+    margin       : 20px auto;
+    position     : absolute;
+}
+
+
+.advertisement-img1,
+.advertisement-img2 {
+    top              : 56px;
+    background-repeat: no-repeat;
+}
+
+.advertisement-img1 {
+    width           : 258px;
+    height          : 110px;
+    left            : 134px;
+    margin          : 40px auto;
+    background-image: url(../img/广告1.png);
+    position        : absolute;
+}
+
+
+.advertisement-img2 {
+    width           : 256px;
+    height          : 110px;
+    left            : 424px;
+    margin          : 40px auto;
+    background-image: url(../img/广告2.png);
+    position        : absolute;
+}
+
+/* 广告结束------------------------------------------------------------------- */
+
+/* 传记结束----------------------------------------------------------------- */
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 页脚制作 */
+.footer-bottom {
+    display             : flex;
+    justify-content     : space-around;
+    background-image    : url(../img/bg.png);
+    background-repeat   : repeat-x;
+    height              : 141px;
+    font-size           : 28px;
+    font-weight         : bold;
+    color               : rgb(160, 161, 161);
+    line-height         : 141px;
+    text-align          : center;
+    /* flex-wrap        : wrap; */
+}
+
+/* 浮动首页按钮 */
+.top {
+    position : fixed;
+    font-size: 30px;
+    right    : 5%;
+    bottom   : 5%;
+}
+
+.top i {
+    color: #bfa;
+}
+
+/* i>img {
+    width         : 3em;
+    height        : 3em;
+    vertical-align: -1.15em;
+    fill          : currentColor;
+    overflow      : hidden;
+    color: rgb(248, 248, 248);
+} */
+
+.icon img {
+    width         : 3em;
+    height        : 3em;
+    vertical-align: -1.15em;
+    fill          : currentColor;
+    overflow      : hidden;
+}

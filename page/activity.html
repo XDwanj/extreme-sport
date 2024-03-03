@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>活动介绍</title>
+	<!-- <link rel="stylesheet" href="../css/reset.css"> -->
+	<link href="../css/activity.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../fa/css/all.css">
+</head>
+
+<body>
+	<!--页眉-->
+	<div class="menu-background-top"></div>
+	<header>
+		<!-- 菜单begin -->
+		<ul class="menu">
+			<ul class="menu-title-home fas"><a href="./index.html">&#xf015</a></ul>
+
+			<ul class="menu-list-sport">
+				<li class="menu-sport"><a href="./sport.html">运动介绍</a></li>
+				<!-- <div></div> -->
+			</ul>
+
+			<ul class="menu-list-sportsman">
+				<li class="menu-sportsman"><a href="./athlete.html">运动员</a></li>
+				<!-- <div></div> -->
+			</ul>
+
+			<ul class="menu-list-activities">
+				<li class="menu-activities"><a href="./activity.html">活动介绍</a></li>
+				<!-- <div></div> -->
+			</ul>
+
+			<ul class="menu-list-commodities">
+				<li class="menu-commodities"><a href="./commodity.html">商品</a></li>
+				<!-- <div></div> -->
+			</ul>
+		</ul>
+		<!-- 菜单end -->
+	</header>
+	<!--页眉-->
+
+	<!--内容物-->
+	<!--首页图-->
+	<div class="tou">
+		<img class="a" src="../img/hardline.jpg" width="1920" height="492" alt="" />
+		<div class="bq">
+			<p class="bq">运动永无止境</p>
+		</div>
+		<div class="bq_2">
+			<p class="bq_2">我们等你来战</p>
+		</div>
+	</div>
+
+	<!--第二层-->
+	<div class="dr">
+		<!--		<a href="#" class="lj">登入</a>-->
+		<div class="img_a">
+			<img class="dr_img" src="../img/活动3.jpg" alt="" />
+			<p class="dr_bq">六月赛事预告</p>
+			<p class="dr_bq2">&nbsp;&nbsp;六月又有哪些精彩的赛事？快来看看本次的赛事安排表吧....</p>
+			<p class="dr_jt">→</p>
+		</div>
+
+		<div class="img_b">
+			<img class="dr_img" src="../img/活动1.jpg" alt="" />
+			<p class="dr_bq">为什么热爱山地？</p>
+			<p class="dr_bq2">&nbsp;&nbsp;你以为山地自行车是把自己裹得紧紧的到处跑？这里充满了技巧、速度...</p>
+			<p class="dr_jt">→</p>
+		</div>
+
+		<div class="img_c">
+			<img class="dr_img" src="../img/活动5.jpg" width="300" height="400" alt="" />
+			<p class="dr_bq">无极限，不挑战</p>
+			<p class="dr_bq2">&nbsp;&nbsp;无论何时，这里都能为你带来无限灵感</p>
+			<p class="dr_jt">→</p>
+		</div>
+		<div class="an_bq">
+			<p class="an_bq1">&nbsp;&nbsp;想了解更多？</p>
+			<p class="an_bq2">↓</p>
+		</div>
+		<div class="an">
+			<a href="javascript:subscribe();" class="dr_text">加入我们</a>
+			<p class="dr_b">√</p>
+			<a href="javascript:subscribe();" class="dr_c">已订阅</a>
+		</div>
+		<div class="kj">
+			<p class="kj"></p>
+		</div>
+
+		<script>
+			// window.onload = function () {
+			var subscribe = function () {
+				var link1 = document.createElement('link');
+				link1.setAttribute('rel', 'stylesheet');
+				link1.setAttribute('type', 'text/css');
+				link1.setAttribute('href', '../css/subscribe.css');
+				document.head.appendChild(link1);
+			}
+			// }
+		</script>
+
+	</div>
+
+
+	<!--俱乐部-->
+	<div class="jlb">
+		<div class="jlb_kj">
+
+			<div class="sskj">
+				<div class="ssk">
+					<input type="text" class="srk">
+					<a href="javascript:;" class="ss_img">
+						<img src="../img/搜索框.png" width="30px" alt="" />
+					</a>
+				</div>
+				<div class="yh">
+					<a href="./login.html"><img src="../img/用户.jpg" width="45px" alt="" /></a>
+					<a href="./login.html" class="yhzx">用户中心</a>
+				</div>
+				<div class="time">
+					<h3><label id="time_p"></label></h3>
+				</div>
+
+				<!--			js获取时间-->
+				<script>
+					function mytime() {
+						var a = new Date();
+						var b = a.toLocaleTimeString();
+						var c = a.toLocaleDateString();
+						document.getElementById("time_p").innerHTML = c + "&nbsp" + b;
+					}
+					setInterval(function () { mytime() }, 1000);
+				</script>
+			</div>
+
+
+			<div class="jlb_bq">
+				<h1>探索运动世界</h1>
+			</div>
+			<hr class="h" />
+			<div class="jlb_nr jlb_nr1-1">
+				<div class="jlb_tk">
+					<img class="jlb_img" src="../img/单板速降.jpg" width="300" height="150" alt="" />
+				</div>
+				<div class="jlb_text">
+					<h1 class="jlb_text1">skateboard俱乐部</h1>
+					<h2 class="jlb_text2">感受速降带来的急速享受</h2>
+					<h3 class="jlb_text3">&nbsp;&nbsp;&nbsp;极限速降将让你感受到速度的魅力，以最快时速81.17mph/130.63
+						kph的速度穿梭于环山公路，享受速度冲击肾上腺的快乐，我们等你来战！</h3>
+				</div>
+				<div class="jlb_time">
+					<h1 class="jlb_time1">01&nbsp;&nbsp;-&nbsp;&nbsp;03</h1>
+					<h1 class="jlb_time2">三月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;七月</h1>
+				</div>
+				<div class="jlb_an">
+					<img src="../img/箭头.png" width="80" alt="" />
+				</div>
+			</div>
+
+			<div class="jlb_nr">
+				<div class="jlb_tk">
+					<img class="jlb_img" src="../img/徒手攀岩.jpeg" width="300" height="150" alt="" />
+				</div>
+				<div class="jlb_text">
+					<h1 class="jlb_text1">Free climbing</h1>
+					<h2 class="jlb_text2">用双手征服大山</h2>
+					<h3 class="jlb_text3">&nbsp;&nbsp;&nbsp;由Free climbing举办的徒手攀岩项目即将来临，快用你的双手征服这大山</h3>
+				</div>
+				<div class="jlb_time">
+					<h1 class="jlb_time1">15&nbsp;&nbsp;-&nbsp;&nbsp;04</h1>
+					<h1 class="jlb_time2">六月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;七月</h1>
+				</div>
+				<div class="jlb_an">
+					<img src="../img/箭头.png" width="80" alt="" />
+				</div>
+
+			</div>
+
+			<div class="jlb_nr">
+				<div class="jlb_tk">
+					<img class="jlb_img" src="../img/翼装飞行.jpeg" width="300" height="150" alt="" />
+				</div>
+				<div class="jlb_text">
+					<h1 class="jlb_text1">World wing Championship</h1>
+					<h2 class="jlb_text2">世界翼装飞行锦标赛</h2>
+					<h3 class="jlb_text3">&nbsp;&nbsp;&nbsp;翼装飞行世锦赛将于9月拉开帷幕，运动员们都在全力备战这次比赛，让我们期待这一次运动员们的展翅翱翔。</h3>
+				</div>
+				<div class="jlb_time">
+					<h1 class="jlb_time1">01&nbsp;&nbsp;-&nbsp;&nbsp;21</h1>
+					<h1 class="jlb_time2">九月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;九月</h1>
+				</div>
+				<div class="jlb_an">
+					<img src="../img/箭头.png" width="80" alt="" />
+				</div>
+			</div>
+
+			<div class="jlb_nr">
+				<div class="jlb_tk">
+					<img class="jlb_img" src="../img/极限越野.jpeg" width="300" height="150" alt="" />
+				</div>
+				<div class="jlb_text">
+					<h1 class="jlb_text1">MXGP</h1>
+					<h2 class="jlb_text2">世界摩托车越野锦标赛</h2>
+					<h3 class="jlb_text3">&nbsp;&nbsp;&nbsp;</h3>
+				</div>
+				<div class="jlb_time">
+					<h1 class="jlb_time1">30&nbsp;&nbsp;-&nbsp;&nbsp;15</h1>
+					<h1 class="jlb_time2">九月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;十月</h1>
+				</div>
+				<div class="jlb_an">
+					<img src="../img/箭头.png" width="80" alt="" />
+				</div>
+			</div>
+			<div class="ov">
+				<p class="ovs">查看更多</p>
+			</div>
+		</div>
+	</div>
+	<!--内容物-->
+
+	<!--页脚-->
+	
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <i>&copy;</i><span>2021&nbsp;<a href="javascript:;">所有权:惊鸿小分队&nbsp;&nbsp;&nbsp;&nbsp;</a>邮箱:&nbsp;xdwanj@qq.com</span>
+            </div>
+            <div class="footer-right">
+                <span>此页制作者:梁友欢</span>
+            </div>
+        </div>
+    
+	<!--页脚-->
+
+</body>
+
+</html>

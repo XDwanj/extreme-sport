@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>登入</title>
+	
+	<style type="text/css">
+	@import url("../css/login.css");
+	</style>
+</head>
+
+<body>
+	
+      	<!--页眉-->
+       	<div>
+
+        </div>
+        <!--页眉-->
+
+		<!--主界面-->
+        <main>
+			<script>
+				var active = function() {
+					var link1 = document.createElement('link');
+					link1.setAttribute('rel', 'stylesheet');
+					link1.setAttribute('href', '../css/login-active.css');
+					document.head.appendChild(link1);
+				}
+			</script>
+              <div class="bj"><!--背景-->
+                    <div class="dr">
+                        <p class="a">Login</p>
+                        <div class="jm">
+                            <input type="text" class="wb" placeholder="账号">
+                            <input type="password" class="wb" placeholder="密码">				  
+                            <div class="an">
+                                <a href="javascript:action();" class="clj" >登入</a>
+                            </div>
+                        	<div class="zc">未拥有账号？&nbsp;<a href="#" class="zc">注册</a></div>
+                   	 	</div>
+              		</div>
+			</div>
+        </main>
+        <!--主界面-->
+
+        <!--交互-->
+        <div class="jh">
+		<p class="hi" >嗨，别来无恙</p>
+        </div>
+		<script>
+				
+			var action = function () {
+				var link1 = document.createElement('link');
+				link1.setAttribute('rel', 'stylesheet');
+				link1.setAttribute('type', 'text/css');
+				link1.setAttribute('href', '../css/login-active.css');
+				document.head.appendChild(link1);
+				
+				setTimeout("window.location.href='./activity.html'",4000);
+			}
+			
+    	</script>
+        <!--交互-->
+		
+
+        <!--页脚-->
+        <div>
+
+        </div>
+        <!--页脚-->
+
+</body>
+</html>

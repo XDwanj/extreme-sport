@@ -1,0 +1,27 @@
+.bj {
+	box-shadow: none;
+	transition: .3s .5s;
+}
+
+.bj {
+	transition: 1.5s;
+	clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+}
+
+.bj .dr {
+	transition: .5s;
+	opacity: 0;
+}
+
+.jh {
+	clip-path: circle(100% at 50% 100%);
+	opacity: 1;
+	transition: 2s 1s;
+}
+
+.jh .hi {
+	font: 100px '微软雅黑';
+	text-shadow: 2px 8px 10px grey;
+	transition: 2s 1s;
+	letter-spacing: 20px;
+}

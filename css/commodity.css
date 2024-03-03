@@ -1,0 +1,831 @@
+.clearfix::before,
+.clearfix::after {
+	content: '';
+	display: table;
+	clear  : both;
+}
+
+/* 总体布局 */
+body {
+	font-size       : 14px;
+	font-size       : '微软雅黑';
+	background-color: #ffffff;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color          : inherit;
+}
+
+/* ----------------------------------------------------------------------------------- */
+
+/* 头部布局 */
+header {
+    height  : 100%;
+    /* 设置相对定位 */
+    position: relative;
+}
+
+/* 菜单 */
+/* 头部的蓝条 */
+.menu-background-top {
+    display            : block;
+    height             : 60px;
+    width              : 100%;
+    background-color   : rgb(0, 22, 43);
+    /* position        : absolute; */
+    top                : 0;
+    z-index            : -1;
+}
+
+/* 菜单布局 */
+.menu {
+    /* 临时的 */
+    /* overflow              : hidden; */
+    z-index        : 2;
+    display        : flex;
+    backdrop-filter: blur(3px);
+    position       : fixed;
+    height         : 60px;
+    width          : 100%;
+    margin         : 0 auto;
+    top            : 0;
+    left           : 0;
+    right          : 0;
+    margin         : auto;
+    justify-content: center;
+}
+
+/* menu中的超链接布局 */
+.menu a {
+    opacity            : 1;
+    /* background-color: #bfa; */
+    transition         : .3s .2s;
+    border-radius      : 20px 20px 20px 20px;
+    top                : 0;
+    position           : relative;
+    line-height        : 60px;
+    /* 改为块元素 */
+    display            : block;
+    /* 设置行高 */
+    text-decoration    : none;
+    /* 设置颜色 */
+    color              : #ffffff;
+    /* 设置字体大小 */
+    font-size          : 18px;
+    /* 设置内边距 */
+    padding            : 0 95px;
+    /* 设置阴影 */
+    box-shadow         : 0px 0px 50px rgba(0, 0, 0, .0);
+}
+
+/* 轮流呈现 */
+.menu .menu-title-home a {
+    animation          : menu-begin 1s .2s backwards;
+}
+.menu .menu-sport a {
+    animation          : menu-begin 1s .4s backwards;
+}
+.menu .menu-sportsman a {
+    animation          : menu-begin 1s .6s backwards;
+}
+.menu .menu-activities a {
+    animation          : menu-begin 1s .8s backwards;
+}
+.menu .menu-commodities a {
+    animation          : menu-begin 1s 1s backwards;
+}
+
+
+@keyframes menu-begin {
+    0% {
+        top             : 100px;
+        opacity         : 0;
+        background-color: rgb(26, 46, 65);
+        backdrop-filter : blur(5px);
+    }
+
+    100% {
+        top    : 0;
+        opacity: 1;
+    }
+}
+
+.menu ul:hover a {
+    top             : 10px;
+    /* 设置hover的背景变色 */
+    background-color: rgb(26, 46, 65);
+    /* 设置hover生效延迟 */
+    transition      : 0.5s ease;
+    /* 设置hover阴影 */
+    box-shadow      : 0px 0px 50px rgba(0, 0, 0, .5);
+    /* 毛玻璃效果 */
+    backdrop-filter : blur(5px);
+}
+
+/* 运动介绍 ok */
+.menu-list-sport .menu-sport+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 262px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-sport:hover .menu-sport+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 运动员OK */
+.menu-list-sportsman .menu-sportsman+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 244px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-sportsman:hover .menu-sportsman+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 活动介绍 */
+.menu-list-activities .menu-activities+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 262px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-activities:hover .menu-activities+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* 商品ok */
+.menu-list-commodities .menu-commodities+div {
+    transition         : .2s;
+    overflow           : hidden;
+    /* display         : none; */
+    width              : 226px;
+    height             : 0px;
+    background-color   : rgb(26, 46, 65);
+    /* 设置绝对定位，使其不占据页面的位置 */
+    position           : absolute;
+    top                : 50px;
+    z-index            : 999;
+    box-shadow         : 0 2px 2px rgba(0, 0, 0, .2);
+    border-radius      : 0 0 20px 20px
+}
+
+.menu-list-commodities:hover .menu-commodities+div {
+    transition: .3s .3s;
+    display   : block;
+    height    : 436px;
+}
+
+
+/* -----------------------内容-------------------------------------------------------------- */
+
+main {
+	/* 下边距 */
+	margin: 50px 0;
+}
+
+.first {
+	/* opacity           : 85%; */
+	margin            : 100px auto;
+	/* 设置为弹性盒子 */
+	display           : flex;
+	/* 水平布局设置为居中 */
+	justify-content   : center;
+	/* 设置第一个模块的宽度为1000px */
+	width             : 1000px;
+	/* overflow       : hidden; */
+}
+
+.first .redbull {
+	/* 设置右外边距 */
+	margin-right: 120px;
+	/* 更改为块元素 */
+	display     : block;
+}
+
+.first-right {
+	/* display: flex; */
+	/* align-items:stretch; */
+}
+
+.first-title {
+	margin  : 50px 0 0 0;
+	/* 更改为相对定位 */
+	position: relative;
+	height  : 115px;
+	width   : 800px;
+}
+
+.first h1 {
+	/* 更改为绝对定位，目的是使两个标签重叠到一起 */
+	position    : absolute;
+	/* 文字粗体 */
+	font-weight : bold;
+	/* transform: translate(-50%, -50%); */
+	width       : 100%;
+	font-size   : 128px;
+	/* 文本定位居中 */
+	text-align  : center;
+	/* 文本阴影 */
+	text-shadow : 0 5px 15px rgba(0, 0, 0, .2);
+}
+
+
+.first-title h1:nth-child(2) {
+	background: #ffffff;
+	color     : #090cee;
+	/* 裁掉多余的部分 */
+	overflow  : hidden;
+	/* 此页页面优先级 */
+	z-index   : 2;
+	/* 过渡动画 */
+	transition: 0.5s;
+	/* 裁切盒子 */
+	clip-path : polygon(0 0, 100% 0, 100% 0, 0% 100%);
+}
+
+.first-title h1:nth-child(2):hover {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+}
+
+.first-title h1:nth-child(1):hover~h1 {
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.buttom-list {
+	display        : flex;
+	/* 平均分且两边留间距 */
+	justify-content: space-around;
+	margin-top     : 300px;
+}
+
+.buttom-list .buttom {
+	color: #f8f8f8;
+	/* 阴影离上边的距离，离左边的距离，阴影扩散，颜色 */
+	box-shadow   : 0 0 10px rgba(0, 0, 0, .4);
+	/* 圆角 */
+	border-radius: 20px;
+}
+
+.buttom-list .buttom-1 {
+	background-color: rgb(8, 10, 170);
+}
+
+.buttom-list .buttom-2 {
+	background-color: #ce1111;
+}
+
+.buttom-list .buttom p {
+	font-size       : 80px;
+	/* font-weight  : bold; */
+	/* 设置文本上下居中 */
+	line-height     : 90px;
+	text-align      : center;
+	padding         : 10px 10px;
+}
+
+.buttom-list .buttom-2:hover {
+	background-color: red;
+	text-decoration : none;
+}
+
+.buttom-list .buttom-1:hover {
+	background-color: rgb(9, 12, 238);
+	text-decoration : none;
+}
+
+.second {
+	margin    : 50px 0;
+	width     : 100%;
+	overflow  : hidden;
+	object-fit: cover;
+}
+
+
+/* 第三部分 */
+.three {
+	margin         : 0 auto;
+	justify-content: center;
+	width          : 100%;
+	position       : relative;
+	overflow       : hidden;
+	height         : 1070px;
+	box-shadow     : 0 0 10px rgba(0, 0, 0, .4);
+}
+
+.three .three-video-list {
+	width    : 100%;
+	/* height: 600px; */
+	position : absolute;
+
+}
+
+.three-video-list video {
+	display: block;
+	width  : 100%;
+}
+
+.neirong {
+	display        : block;
+	margin         : 0 auto;
+	position       : relative;
+	width          : 1500px;
+	height         : 700px;
+	justify-content: space-around;
+	z-index        : 100;
+	margin-top     : 0px;
+}
+
+.three .redbull2 img {
+	box-shadow   : 0 0 10px rgba(0, 0, 0, .4);
+	border-radius: 40px;
+}
+
+/* -----------------------------1成分-------------------------------- */
+.btn-1 {
+	margin-top      : 80px;
+	position        : relative;
+	text-align      : center;
+	justify-content : center;
+	display         : block;
+	width           : 200px;
+	height          : 200px;
+	border          : none;
+	background-color: gray;
+	border-radius   : 100px;
+	outline         : none;
+	cursor          : pointer;
+	color           : #fff;
+	transition      : .6s;
+	opacity         : 0.9;
+	clip-path       : circle(20% at 50% 50%);
+}
+
+.btn-p {
+	opacity        : 1;
+	margin-top     : 83px;
+	text-align     : center;
+	justify-content: center;
+	position       : relative;
+}
+
+.btn1 {
+	top            : 20%;
+	width          : 100%;
+	position       : absolute;
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	font           : 30px '微软雅黑';
+	letter-spacing : 10px;
+	opacity        : 0;
+	font-weight    : bold;
+}
+
+.btp1 {
+
+	top            : 10px;
+	width          : 100%;
+	position       : relative;
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	font           : 20px '微软雅黑';
+	letter-spacing : 10px;
+	opacity        : 0;
+}
+
+.btn-1:hover {
+	width     : 100%;
+	height    : 300px;
+	background: url(../img/成分-1.png) no-repeat center center;
+	transform : rotateX(15deg);
+	clip-path : circle(100% at 50% 50%);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+}
+
+.btn-1:hover .btn-p {
+	transition: .2s;
+	opacity   : 0;
+}
+
+.btn-1:hover .btn1 {
+	opacity: 1;
+}
+
+.btn-1:hover .btp1 {
+	opacity: 1;
+}
+
+
+/* -----------------------------------------2产地---------------------------------- */
+
+.btn-2 {
+	color           : #fff;
+	position        : relative;
+	text-align      : center;
+	justify-content : center;
+	display         : block;
+	width           : 200px;
+	height          : 200px;
+	border          : none;
+	background-color: gray;
+	border-radius   : 100px;
+	outline         : none;
+	cursor          : pointer;
+	transition      : .5s;
+	opacity         : 0.9;
+	clip-path       : circle(20% at 50% 50%);
+}
+
+.btp2 {
+	margin-top     : 10px;
+	top            : 10%;
+	width          : 100%;
+	position       : relative;
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	font-weight    : bold;
+	font           : 20px '微软雅黑';
+	letter-spacing : 10px;
+	opacity        : 0;
+}
+
+.btn-2:hover {
+	width     : 100%;
+	height    : 300px;
+	background: url(../img/产地-1.png) no-repeat center center;
+	box-shadow: 0 0 10px rgb(0, 0, .3);
+	transform : rotateX(15deg);
+	clip-path : circle(100% at 50% 50%);
+}
+
+.btn-2:hover img {
+	transition: .2s;
+	opacity   : 0;
+}
+
+
+.btn-2:hover .btn1 {
+	opacity: 1;
+}
+
+.btn-2:hover .btp2 {
+	transition: 3s;
+	opacity   : 1;
+}
+
+
+/* -----------------------------------------3创意---------------------------------- */
+
+.btn-3 {
+	position        : relative;
+	text-align      : center;
+	justify-content : center;
+	display         : block;
+	width           : 200px;
+	height          : 200px;
+	border          : none;
+	background-color: gray;
+	border-radius   : 100px;
+	outline         : none;
+	cursor          : pointer;
+	transition      : .5s;
+	opacity         : 0.9;
+	clip-path       : circle(20% at 50% 50%);
+	color           : #fff;
+}
+
+
+
+.btn-3:hover {
+	width     : 100%;
+	height    : 300px;
+	background: url(../img/创意-1.png) no-repeat center center;
+	box-shadow: 0 0 10px rgb(0, 0, .3);
+	transform : rotateX(15deg);
+	clip-path : circle(100% at 50% 50%);
+}
+
+.btn-3:hover img {
+	transition: .2s;
+	opacity   : 0;
+}
+
+
+.btn-3:hover .btn1 {
+	opacity: 1;
+}
+
+.btp3 {
+	margin-top     : 10px;
+	top            : 10%;
+	width          : 100%;
+	position       : relative;
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	font-weight    : bold;
+	font           : 20px '微软雅黑';
+	letter-spacing : 10px;
+	opacity        : 0;
+}
+
+.btn-3:hover .btp3 {
+	transition: 3s;
+	opacity   : 1;
+}
+
+
+
+
+/* ------------------------------------质量------------------------------------ */
+
+.btn-4 {
+	position        : relative;
+	text-align      : center;
+	justify-content : center;
+	display         : block;
+	width           : 200px;
+	height          : 200px;
+	border          : none;
+	background-color: gray;
+	border-radius   : 100px;
+	outline         : none;
+	cursor          : pointer;
+	transition      : .5s;
+	opacity         : 0.9;
+	clip-path       : circle(20% at 50% 50%);
+	color           : #fff;
+}
+
+.btn-4:hover {
+	width     : 100%;
+	height    : 300px;
+	transform : rotateX(15deg);
+	clip-path : circle(100% at 50% 50%);
+	box-shadow: 0 0 10px rgb(0, 0, .3);
+	background: url(../img/质量-1.png) no-repeat center center;
+}
+
+.btn-4:hover img {
+	transition: .2s;
+	opacity   : 0;
+}
+
+
+.btn-4:hover .btn1 {
+	opacity: 1;
+}
+
+.btp4 {
+	margin-top     : 10px;
+	top            : 10%;
+	width          : 100%;
+	position       : relative;
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	font-weight    : bold;
+	font           : 20px '微软雅黑';
+	letter-spacing : 10px;
+	opacity        : 0;
+	font-weight    : bold;
+}
+
+.btn-4:hover .btp4 {
+	transition: 2s;
+	opacity   : 1;
+}
+
+
+
+/* 第四部分 */
+.four {
+	margin             : 100px auto;
+	position           : relative;
+	height             : 560px;
+	width              : 1830px;
+	display            : flex;
+	justify-content    : center;
+	align-items        : center;
+	flex-wrap          : wrap;
+	padding            : 30px;
+	box-shadow         : 0 0 10px rgba(0, 0, 0, .4);
+	/* background-color: rgb(56, 54, 54); */
+	background-image   : linear-gradient(125deg, #2c3e50, #27ae60, #2980b9, #e74c3c, #8e44ad);
+	background-size    : 400%;
+	animation          : bganimation 15s infinite;
+	border-radius      : 25px;
+}
+
+@keyframes bganimation {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.p1 {
+	text-align : center;
+	width      : 1500px;
+	font-weight: bold;
+	height     : 50px;
+	font-size  : 18px;
+	color      : #ffffff;
+}
+
+.content h2 {
+	font-size    : 20px;
+	font-weight  : bold;
+	margin-bottom: 10px;
+}
+
+
+
+.four .card {
+	margin            : 0 auto;
+	margin-top        : 100px;
+	position          : relative;
+	max-width         : 300px;
+	height            : 215px;
+	background        : #00162b;
+	margin            : 30px 50px;
+	padding           : 20px 15px;
+	display           : flex;
+	flex-direction    : column;
+	box-shadow        : 0 5px 202px rgba(0, 0, 0, 0.5);
+	transition        : .3s ease-in-out;
+	border-radius     : 25px;
+	/* justify-content: center; */
+}
+
+.four .card:hover {
+	height: 420px;
+}
+
+.four .card .imgbx {
+	position     : relative;
+	width        : 260px;
+	height       : 260px;
+	top          : -60px;
+	left         : 20px;
+	z-index      : 1;
+	box-shadow   : 0 5px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 40px;
+}
+
+.four .card .imgbx img {
+	max-width    : 100%;
+	border-radius: 4px;
+	border-radius: 40px;
+}
+
+.four .card .content {
+	position  : relative;
+	margin-top: -140px;
+	padding   : 10px 15px;
+	text-align: center;
+	color     : #fff;
+	visibility: hidden;
+	opacity   : 0;
+	transition: .3s ease-in-out;
+}
+
+.four .card:hover .content {
+	visibility      : visible;
+	opacity         : 1;
+	margin-top      : -40px;
+	transition-delay: .3s;
+}
+
+
+
+/* 赞助商部分 */
+
+.last-1 {
+	margin-top     : 100px;
+	height         : 200px;
+	width          : 100%;
+	display        : flex;
+	position       : relative;
+	text-align     : center;
+	justify-content: center;
+	margin         : 0 auto;
+}
+
+.last-1-1 {
+	width          : 1000px;
+	display        : flex;
+	position       : relative;
+	text-align     : center;
+	justify-content: center;
+}
+
+.last-1-1 p {
+	margin        : 100px auto;
+	font-size     : 32px;
+	text-shadow   : 0 0 2px rgba(0, 0, 0, .3);
+	letter-spacing: 10px;
+	font-weight   : bold;
+}
+
+.last-2 {
+	height         : 100px;
+	width          : 100%;
+	display        : flex;
+	position       : relative;
+	text-align     : center;
+	justify-content: center;
+	margin         : 50px auto;
+}
+
+.last-2-1 {
+	width          : 100%;
+	display        : flex;
+	position       : relative;
+	text-align     : center;
+	justify-content: space-around;
+}
+
+.mg1 {
+	margin: 0 50px;
+}
+/* ---------------------------------------------------------------------------- */
+/* 页脚制作 */
+.footer-bottom {
+	display             : flex;
+	justify-content     : space-around;
+	background-image    : url(../img/页脚.png);
+	background-repeat   : repeat-x;
+	height              : 141px;
+	font-size           : 28px;
+	font-weight         : bold;
+	color               : rgb(160, 161, 161);
+	line-height         : 141px;
+	text-align          : center;
+	/* flex-wrap        : wrap; */
+}
+
+/* 浮动首页按钮 */
+.top {
+	position : fixed;
+	font-size: 30px;
+	right    : 5%;
+	bottom   : 5%;
+}
+
+.top i {
+	color: #bfa;
+}
